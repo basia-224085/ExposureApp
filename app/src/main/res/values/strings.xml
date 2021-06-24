@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ExposureApp</string>
+    <string name="photographer">photographer</string>
+    <string name="model">model</string>
 </resources>

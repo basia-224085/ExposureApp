@@ -1,4 +1,4 @@
-package com.thesis.exposureapp
+package com.thesis.exposureapp.authentication
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,6 +11,8 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.firebase.auth.FirebaseAuth
+import com.thesis.exposureapp.MainActivity
+import com.thesis.exposureapp.R
 
 class LoginFragment : Fragment() {
     private lateinit var auth: FirebaseAuth

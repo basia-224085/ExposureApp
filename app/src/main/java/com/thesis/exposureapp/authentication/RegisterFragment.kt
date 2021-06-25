@@ -1,4 +1,4 @@
-package com.thesis.exposureapp
+package com.thesis.exposureapp.authentication
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -17,6 +17,8 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.thesis.exposureapp.MainActivity
+import com.thesis.exposureapp.R
 
 class RegisterFragment : Fragment() {
     private lateinit var auth: FirebaseAuth

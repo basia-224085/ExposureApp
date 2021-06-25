@@ -1,4 +1,4 @@
-package com.thesis.exposureapp
+package com.thesis.exposureapp.authentication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import com.thesis.exposureapp.R
 
 
 class AuthenticateActivity : AppCompatActivity(R.layout.authenticate_activity) {

@@ -13,4 +13,22 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Theme.ExposureApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.ExposureApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.ExposureApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!--Navigation bar-->
+    <style name="NavigationTheme" parent="Theme.ExposureApp">
+        <item name="listPreferredItemHeightSmall">55dp</item>
+    </style>
+
+    <style name="Theme.ExposureApp.Items">
+        <item name="android:textSize">20sp</item>
+    </style>
 </resources>

@@ -1,10 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/honeydew"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".user_profile.UserProfileFragment">
+
+    <RelativeLayout
+        android:id="@+id/pic_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/profile_picture"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:foreground="@drawable/profile_picture_foreground" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/edit_profile_pic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/profile_picture"
+            android:layout_alignBottom="@id/profile_picture"
+            android:layout_marginEnd="120dp"
+            android:layout_marginBottom="6dp"
+            app:srcCompat="@drawable/ic_photo"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_below="@id/pic_layout"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp">
+
+            <TextView
+                android:id="@+id/name_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textColor="@color/celadon_blue"
+                android:textSize="15sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/name_label"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/edit_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_edit"
+                app:tint="@color/prussian_blue" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp">
+
+            <TextView
+                android:id="@+id/surname_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/celadon_blue"
+                android:text="Surname"
+                android:textSize="15sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/surname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/surname_label"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/edit_surname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_edit"
+                app:tint="@color/prussian_blue" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp">
+
+            <TextView
+                android:id="@+id/role_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Role"
+                android:textColor="@color/celadon_blue"
+                android:textSize="15sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/role"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/role_label"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/edit_role"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_edit"
+                app:tint="@color/prussian_blue" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp">
+
+            <TextView
+                android:id="@+id/intro_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Introduction"
+                android:textColor="@color/celadon_blue"
+                android:textSize="15sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/intro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/intro_label"
+                android:lines="5"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/edit_intro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_edit"
+                app:tint="@color/prussian_blue" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/log_out_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Useeeer"/>
-
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="20dp"
+        android:text="Log out" />
 </RelativeLayout>

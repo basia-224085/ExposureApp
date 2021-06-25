@@ -2,4 +2,6 @@
 <resources>
     <string name="slogan">slogan</string>
     <string name="menu_forum">FORUM</string>
+    <string name="edit_picture">edit</string>
+    <string name="delete_picture">delete</string>
 </resources>

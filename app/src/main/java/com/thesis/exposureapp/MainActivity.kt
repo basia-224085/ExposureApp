@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -17,9 +18,11 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.thesis.exposureapp.authentication.AuthenticateActivity
+import com.thesis.exposureapp.forum.ThreadFragment
+import com.thesis.exposureapp.models.ForumThread
 import com.thesis.exposureapp.models.User
 
-class MainActivity: AppCompatActivity() {
+class MainActivity: AppCompatActivity(), Communicator {
     private lateinit var auth: FirebaseAuth
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var drawerLayout: DrawerLayout
@@ -78,5 +81,20 @@ class MainActivity: AppCompatActivity() {
         }?.addOnFailureListener { exception ->
             Log.d("Debug", "ops! get failed with ", exception)
         }
+    }
+
+    override fun replaceFragment(fragment: Fragment) {
+        val transaction = this.supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.nav_host_fragment, fragment)
+        //transaction.addToBackStack(null)
+        transaction.commit()
+        //TODO("going back interferes with drawer and overlaps")
+    }
+    override fun passForumThread(ft: ForumThread) {
+        val bundle = Bundle()
+        bundle.putSerializable("ft", ft)
+        val threadFragment = ThreadFragment()
+        threadFragment.arguments = bundle
+        replaceFragment(threadFragment)
     }
 }

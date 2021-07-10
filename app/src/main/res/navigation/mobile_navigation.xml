@@ -11,7 +11,7 @@
         tools:layout="@layout/home_fragment" />
     <fragment
         android:id="@+id/nav_forum"
-        android:name="com.thesis.exposureapp.ForumFragment"
+        android:name="com.thesis.exposureapp.forum.ForumFragment"
         android:label="@string/menu_forum"
         tools:layout="@layout/forum_fragment" />
 

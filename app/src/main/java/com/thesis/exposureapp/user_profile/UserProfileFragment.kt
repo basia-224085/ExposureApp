@@ -28,8 +28,9 @@ import com.thesis.exposureapp.R
 import com.thesis.exposureapp.authentication.AuthenticateActivity
 import com.thesis.exposureapp.models.User
 
-class UserProfileFragment: Fragment() {
-    private val GALLERY_REQUEST_CODE = 100
+private const val GALLERY_REQUEST_CODE = 100
+
+class UserProfileFragment : Fragment() {
     private lateinit var uName: TextView
     private lateinit var uSurname: TextView
     private lateinit var uRole: TextView
@@ -38,7 +39,11 @@ class UserProfileFragment: Fragment() {
 
     private lateinit var storageReference: StorageReference
     private var auth: FirebaseAuth = FirebaseAuth.getInstance()
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         val root = inflater.inflate(R.layout.user_profile_fragment, container, false)
         uName = root.findViewById(R.id.name)
         uSurname = root.findViewById(R.id.surname)
@@ -55,17 +60,14 @@ class UserProfileFragment: Fragment() {
         editPicBtn.setOnClickListener {
             popUpDeleteOrEditPicture()
         }
-
         val editNameBtn: ImageView = root.findViewById(R.id.edit_name)
         editNameBtn.setOnClickListener {
             popUpEditor("name")
         }
-
         val editSurnameBtn: ImageView = root.findViewById(R.id.edit_surname)
         editSurnameBtn.setOnClickListener {
             popUpEditor("surname")
         }
-
         val editRoleBtn: ImageView = root.findViewById(R.id.edit_role)
         editRoleBtn.setOnClickListener {
             popUpEditor("role")
@@ -74,7 +76,6 @@ class UserProfileFragment: Fragment() {
         editIntroBtn.setOnClickListener {
             popUpEditor("intro")
         }
-
         val logOutBtn: Button = root.findViewById(R.id.log_out_btn)
         logOutBtn.setOnClickListener {
             auth.signOut()
@@ -85,6 +86,7 @@ class UserProfileFragment: Fragment() {
         }
         return root
     }
+
     // crop and upload picture
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -124,7 +126,7 @@ class UserProfileFragment: Fragment() {
             }
         }
     }
-
+    // todo: maybe change for coroutines if possible
     private fun getUserInfoFromDB() {
         // fill fragment view with data from User Singleton
         uName.text = User.name

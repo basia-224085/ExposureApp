@@ -6,7 +6,7 @@
     app:startDestination="@+id/nav_home">
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.thesis.exposureapp.HomeFragment"
+        android:name="com.thesis.exposureapp.home.HomeFragment"
         android:label="HOME"
         tools:layout="@layout/home_fragment" />
     <fragment

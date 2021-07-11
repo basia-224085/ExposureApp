@@ -22,7 +22,7 @@ import com.thesis.exposureapp.forum.ThreadFragment
 import com.thesis.exposureapp.models.ForumThread
 import com.thesis.exposureapp.models.User
 
-class MainActivity: AppCompatActivity(), Communicator {
+class MainActivity : AppCompatActivity(), Communicator {
     private lateinit var auth: FirebaseAuth
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var drawerLayout: DrawerLayout
@@ -90,6 +90,7 @@ class MainActivity: AppCompatActivity(), Communicator {
         transaction.commit()
         //TODO("going back interferes with drawer and overlaps")
     }
+
     override fun passForumThread(ft: ForumThread) {
         val bundle = Bundle()
         bundle.putSerializable("ft", ft)

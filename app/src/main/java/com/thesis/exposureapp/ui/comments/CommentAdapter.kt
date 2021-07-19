@@ -1,4 +1,4 @@
-package com.thesis.exposureapp.comments
+package com.thesis.exposureapp.ui.comments
 
 
 import android.view.LayoutInflater

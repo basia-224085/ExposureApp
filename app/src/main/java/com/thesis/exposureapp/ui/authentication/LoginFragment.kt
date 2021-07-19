@@ -1,4 +1,4 @@
-package com.thesis.exposureapp.authentication
+package com.thesis.exposureapp.ui.authentication
 
 import android.content.Intent
 import android.os.Bundle

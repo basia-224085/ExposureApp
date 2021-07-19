@@ -1,4 +1,4 @@
-package com.thesis.exposureapp.forum
+package com.thesis.exposureapp.ui.forum
 
 import android.view.LayoutInflater
 import android.view.View

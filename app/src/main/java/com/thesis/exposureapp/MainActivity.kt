@@ -1,6 +1,7 @@
 package com.thesis.exposureapp
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -17,10 +18,14 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import com.thesis.exposureapp.authentication.AuthenticateActivity
-import com.thesis.exposureapp.forum.ThreadFragment
+import com.thesis.exposureapp.ui.authentication.AuthenticateActivity
+import com.thesis.exposureapp.ui.forum.ThreadFragment
 import com.thesis.exposureapp.models.ForumThread
+import com.thesis.exposureapp.models.Offer
 import com.thesis.exposureapp.models.User
+import com.thesis.exposureapp.ui.mix_and_match.matches.MessageFragment
+import com.thesis.exposureapp.ui.mix_and_match.offers.OfferFragment
+import com.thesis.exposureapp.ui.mix_and_match.offers.SwipeFragment
 
 class MainActivity : AppCompatActivity(), Communicator {
     private lateinit var auth: FirebaseAuth
@@ -97,5 +102,50 @@ class MainActivity : AppCompatActivity(), Communicator {
         val threadFragment = ThreadFragment()
         threadFragment.arguments = bundle
         replaceFragment(threadFragment)
+    }
+
+    override fun passMatchInfo(match: Triple<String, String, Uri>) {
+        val bundle = Bundle()
+        bundle.putSerializable("match", match)
+        val messageFragment = MessageFragment()
+        messageFragment.arguments = bundle
+        replaceFragment(messageFragment)
+    }
+
+    override fun passOffer(offer: Offer) {
+        val bundle = Bundle()
+        bundle.putSerializable("offer", offer)
+        val swipeFragment = SwipeFragment()
+        swipeFragment.arguments = bundle
+        replaceFragment(swipeFragment)
+    }
+//todo niepotrzebne
+   override fun passEditInfoToForm(formRole: String, action: String, offer: Offer) {
+        val bundle = Bundle()
+        bundle.putString("formRole", formRole)
+        bundle.putString("action", action)
+        bundle.putSerializable("offer", offer)
+        val offerFragment = OfferFragment()
+        offerFragment.arguments = bundle
+        replaceFragment(offerFragment)
+    }
+
+//todo niepotrzebne
+    override fun passAddInfoToForm(formRole: String, action: String) {
+        val bundle = Bundle()
+        bundle.putString("formRole", formRole)
+        bundle.putString("action", action)
+        val offerFragment = OfferFragment()
+        offerFragment.arguments = bundle
+        replaceFragment(offerFragment)
+    }
+
+    override fun passInfoToForm(action: String, offer: Offer?) {
+        val bundle = Bundle()
+        bundle.putString("action", action)
+        bundle.putSerializable("offer", offer)
+        val offerFragment = OfferFragment()
+        offerFragment.arguments = bundle
+        replaceFragment(offerFragment)
     }
 }

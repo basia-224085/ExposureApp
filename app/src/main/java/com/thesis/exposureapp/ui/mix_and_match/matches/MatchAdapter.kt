@@ -1,34 +1,31 @@
-package com.thesis.exposureapp.forum
+package com.thesis.exposureapp.ui.mix_and_match.matches
 
-
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
-import android.widget.Filter.FilterResults
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
-import com.thesis.exposureapp.models.ForumThread
 import java.util.*
-import kotlin.collections.ArrayList
 
-class ThreadAdapter constructor(
-    private val list: ArrayList<ForumThread>,
-    private val listener: ThreadViewHolder.ContentListener
-) : RecyclerView.Adapter<ThreadViewHolder>(), Filterable {
-    var filteredList = ArrayList<ForumThread>()
+class MatchAdapter constructor(
+    private val list: ArrayList<Triple<String, String, Uri>>,
+    private val listener: MatchViewHolder.ContentListener
+) : RecyclerView.Adapter<MatchViewHolder>(), Filterable {
+    var filteredList = ArrayList<Triple<String, String, Uri>>()
 
     init {
         filteredList = list
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ThreadViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MatchViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        return ThreadViewHolder(inflater, parent)
+        return MatchViewHolder(inflater, parent)
     }
 
-    override fun onBindViewHolder(holder: ThreadViewHolder, position: Int) {
-        val forumThread: ForumThread = filteredList[position]
-        holder.bind(forumThread, listener)
+    override fun onBindViewHolder(holder: MatchViewHolder, position: Int) {
+        val match: Triple<String, String, Uri> = filteredList[position]
+        holder.bind(match, listener)
     }
 
     override fun getItemCount(): Int = filteredList.size
@@ -40,10 +37,9 @@ class ThreadAdapter constructor(
                 filteredList = if (charSearch.isEmpty()) {
                     list // nothing typed in search engine
                 } else {
-                    val resultList = ArrayList<ForumThread>()
+                    val resultList = ArrayList<Triple<String, String, Uri>>()
                     for (row in list) {
-                        if (row.question?.toLowerCase(Locale.ROOT)
-                                ?.contains(charSearch.toLowerCase(Locale.ROOT)) == true
+                        if (row.second.toLowerCase(Locale.ROOT).contains(charSearch.toLowerCase(Locale.ROOT))
                         ) {
                             resultList.add(row)
                         }
@@ -57,10 +53,9 @@ class ThreadAdapter constructor(
 
             @Suppress("UNCHECKED_CAST")
             override fun publishResults(constraint: CharSequence?, results: FilterResults?) {
-                filteredList = results?.values as ArrayList<ForumThread>
+                filteredList = results?.values as ArrayList<Triple<String, String, Uri>>
                 notifyDataSetChanged()
             }
-
         }
     }
 }

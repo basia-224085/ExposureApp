@@ -1,4 +1,4 @@
-package com.thesis.exposureapp.forum
+package com.thesis.exposureapp.ui.forum
 
 import android.annotation.SuppressLint
 import android.os.Bundle

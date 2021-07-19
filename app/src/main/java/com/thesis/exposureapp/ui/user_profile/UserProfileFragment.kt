@@ -1,4 +1,4 @@
-package com.thesis.exposureapp.user_profile
+package com.thesis.exposureapp.ui.user_profile
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -25,7 +25,7 @@ import com.squareup.picasso.Picasso
 import com.theartofdev.edmodo.cropper.CropImage
 import com.theartofdev.edmodo.cropper.CropImageView
 import com.thesis.exposureapp.R
-import com.thesis.exposureapp.authentication.AuthenticateActivity
+import com.thesis.exposureapp.ui.authentication.AuthenticateActivity
 import com.thesis.exposureapp.models.User
 
 private const val GALLERY_REQUEST_CODE = 100

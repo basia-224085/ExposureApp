@@ -7,7 +7,7 @@
     android:background="@color/honeydew"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".user_profile.UserProfileFragment">
+    tools:context=".ui.user_profile.UserProfileFragment">
 
     <RelativeLayout
         android:id="@+id/pic_layout"

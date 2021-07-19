@@ -1,4 +1,4 @@
-package com.thesis.exposureapp.comments
+package com.thesis.exposureapp.ui.comments
 
 
 import android.view.LayoutInflater
@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RatingBar
 import android.widget.TextView
-import androidx.core.view.marginTop
 import androidx.recyclerview.widget.RecyclerView
 import com.thesis.exposureapp.R
 import com.thesis.exposureapp.models.Comment

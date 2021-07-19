@@ -1,4 +1,4 @@
-package com.thesis.exposureapp.authentication
+package com.thesis.exposureapp.ui.authentication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

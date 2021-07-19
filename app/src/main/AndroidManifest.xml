@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ExposureApp">
-        <activity android:name=".authentication.AuthenticateActivity">
+        <activity android:name="com.thesis.exposureapp.ui.authentication.AuthenticateActivity">
 
         </activity>
         <activity android:name=".MainActivity"

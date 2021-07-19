@@ -1,7 +1,6 @@
-package com.thesis.exposureapp.home
+package com.thesis.exposureapp.ui.home
 
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View

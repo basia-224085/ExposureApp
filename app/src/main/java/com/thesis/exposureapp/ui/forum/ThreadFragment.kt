@@ -1,4 +1,4 @@
-package com.thesis.exposureapp.forum
+package com.thesis.exposureapp.ui.forum
 
 
 import android.annotation.SuppressLint
@@ -19,7 +19,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.thesis.exposureapp.R
-import com.thesis.exposureapp.comments.CommentAdapter
+import com.thesis.exposureapp.ui.comments.CommentAdapter
 import com.thesis.exposureapp.models.Comment
 import com.thesis.exposureapp.models.ForumThread
 import com.thesis.exposureapp.models.User

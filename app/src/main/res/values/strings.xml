@@ -2,4 +2,35 @@
     <string name="app_name">Exposure</string>
     <string name="photographer">photographer</string>
     <string name="model">model</string>
+
+    <!--spinners-->
+    <string-array name="Gender">
+        <item>Female</item>
+        <item>Male</item>
+    </string-array>
+
+    <string-array name="Countries">
+        <item>Poland</item>
+        <item>USA</item>
+    </string-array>
+
+    <string-array name="Cities">
+        <item>Warsaw</item>
+        <item>Krakow</item>
+        <item>Lodz</item>
+        <item>New York</item>
+        <item>Chicago</item>
+        <item>Los Angeles</item>
+    </string-array>
+
+    <string-array name="Photoshoots">
+        <item>nude</item>
+        <item>studio</item>
+        <item>nature</item>
+        <item>city</item>
+        <item>group</item>
+    </string-array>
+
+
+
 </resources>

@@ -1,4 +1,4 @@
-package com.thesis.exposureapp.home
+package com.thesis.exposureapp.ui.home
 
 import android.net.Uri
 import android.view.LayoutInflater

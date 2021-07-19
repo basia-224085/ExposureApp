@@ -6,18 +6,18 @@
     app:startDestination="@+id/nav_home">
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.thesis.exposureapp.home.HomeFragment"
+        android:name="com.thesis.exposureapp.ui.home.HomeFragment"
         android:label="HOME"
         tools:layout="@layout/home_fragment" />
     <fragment
         android:id="@+id/nav_forum"
-        android:name="com.thesis.exposureapp.forum.ForumFragment"
+        android:name="com.thesis.exposureapp.ui.forum.ForumFragment"
         android:label="@string/menu_forum"
         tools:layout="@layout/forum_fragment" />
 
     <fragment
         android:id="@+id/nav_user_profile"
-        android:name="com.thesis.exposureapp.user_profile.UserProfileFragment"
+        android:name="com.thesis.exposureapp.ui.user_profile.UserProfileFragment"
         android:label="MY PROFILE"
         tools:layout="@layout/user_profile_fragment" />
 </navigation>

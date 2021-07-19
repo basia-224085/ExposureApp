@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/honeydew"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/profile_picture"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:foreground="@drawable/profile_picture_foreground" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_picture"
+        android:textColor="@color/prussian_blue"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="@dimen/fab_margin"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/intro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/username"
+        android:textColor="@color/prussian_blue"
+        android:textSize="18sp"
+        android:layout_margin="@dimen/fab_margin"
+        android:lines="5" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/intro"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <EditText
+            android:id="@+id/recipient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/celadon_blue"
+            android:hint="Recipient email(s)"
+            android:textColorHint="#85C8F3"
+            android:textColor="@color/honeydew"
+            android:inputType="textEmailAddress"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/subject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:background="@color/celadon_blue"
+            android:hint="Subject"
+            android:textColorHint="#85C8F3"
+            android:inputType="text|textCapSentences"
+            android:padding="10dp"
+            android:textColor="@color/honeydew" />
+
+        <EditText
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/powder_blue"
+            android:gravity="start"
+            android:hint="Enter message here..."
+            android:inputType="text|textCapSentences"
+            android:textColorHint="@color/prussian_blue"
+            android:minHeight="150dp"
+            android:padding="10dp"
+            android:textColor="@color/prussian_blue" />
+
+        <Button
+            android:id="@+id/sendEmailButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="send Email" />
+    </LinearLayout>
+</RelativeLayout>
